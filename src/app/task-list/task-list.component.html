@@ -1,0 +1,29 @@
+<!-- task-list.component.html -->
+<div class="container-fluid">
+    <div class="container pt-4">
+        <table class="table table-hover table-info table-striped  ">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Tasks Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody class="table-striped">
+                <tr *ngFor="let task of tasks; let i = index">
+
+
+                    <td>{{ task.taskName }}</td>
+                    <td>{{ task.description }}</td>
+                    <td>{{ task.dueDate }}</td>
+                    <td>
+                        <button type="button" class="btn btn-warning mx-2" [routerLink]="['/edit-task', task.id, 'edit']" (click)="editTask(task.id)">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteTask(task.id)">Delete</button>
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+</div>
+  
