@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Tasks } from './model';
 
@@ -20,10 +20,8 @@ export class TaskService {
   getTasks(): Observable<Tasks[]> {
     return this.http.get<Tasks[]>(this.apiURL);
   }
-
-
-  addTask(task:any): Observable<any> {
-    debugger
+  
+  addTask(task:Tasks): Observable<any> {
     return this.http.post<any>(this.apiURL, task);
   }
 

@@ -1,6 +1,6 @@
 <!-- task-form.component.html -->
 
-<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="taskForm" class="form" (ngSubmit)="onSubmit()">
     <div>
       <label for="taskName">Task Name:</label>
       <input type="text" class="form-control" id="taskName" formControlName="taskName" />

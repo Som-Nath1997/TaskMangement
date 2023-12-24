@@ -10,6 +10,7 @@ import { TaskService } from './task.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     AppComponent,
     TaskFormComponent,
     ChartComponent,
-    TaskListComponent
+    TaskListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

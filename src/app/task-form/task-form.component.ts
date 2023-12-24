@@ -12,7 +12,7 @@ export class TaskFormComponent implements OnInit {
 
   taskForm!: FormGroup;
   id!:string;
-  data!:any
+  data!:Date;
 
   constructor(private fb: FormBuilder, private taskService: TaskService
     ,private route: ActivatedRoute,private router: Router) {}
@@ -21,7 +21,7 @@ export class TaskFormComponent implements OnInit {
     this.taskForm = this.fb.group({
       taskName: ['', Validators.required],
       description: ['',Validators.required],
-      dueDate: [null, Validators.required],
+      dueDate: [Date, Validators.required],
     });
     this.id = this.route.snapshot.params['postId'];
     if(this.id){
@@ -38,7 +38,6 @@ export class TaskFormComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger
     if (this.taskForm.valid && this.id) {
       const task = this.taskForm.value;
     this.taskService.editTask(this.id,task).subscribe(response => {
